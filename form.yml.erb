@@ -2,22 +2,38 @@
 cluster: "fox"
 
 form:
-  - auto_accounts
+  - auto_modules_MATLAB
   - ec_alacarte
-  - ec_mem
-  - ec_cpus
-  - ec_gpus
+  - ec_matlab_glx
+  - auto_accounts
   - bc_num_hours
   - ec_modules
+  - ec_cpus
+  - ec_mem
+  - ec_gpus
 
 attributes:
+
+  auto_modules_MATLAB:
+    default: false
+
   auto_accounts:
-   label: "Choose the Educloud project:"
-   help: |
-          <small>If you are unsure, ask the project principal</small>
+          label: "Choose the Educloud project to run under:"
+          help: |
+                 <small>If you are unsure, ask the project principal</small>
+
 
 <%= FormTemplate.fox_alacarte %>
 
+  ec_matlab_glx:
+    label: "Use hardware rendering for MATLAB GUI"
+    help: |
+      <small>This will add `-nosoftwareopengl` to the matlab command line when requesting a GPU</small>
+    widget: "check_box"
+    checked_value: 1
+    unchecked_value: 0
+    value: 0
+    
   ec_cpus:
     label: "Number of CPU cores:"
     widget: "number_field"
@@ -36,16 +52,12 @@ attributes:
     widget: "number_field"
     required: true
 
-  bc_num_hours:
-    label: "Runtime (in hours) (required)"
-    widget: "number_field"
-    required: true
-    value: "1"
-
   ec_modules:
-   label: "Additional modules (optional)"
-   value: ''
-   cacheable: false
-   help: <small>Space separated list of additional modules to load</br/>
-         Run `module avail` for a full list. </small>
+    label: "Additional modules (optional)"
+    help: |
+        <small>Space separated list of additional modules to load.</br/>
+        </br/>
+        Run `module avail` for a full list </small>
 
+  bc_num_hours:
+    label: "Runtime (in hours)"

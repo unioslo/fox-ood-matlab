@@ -28,7 +28,8 @@ attributes:
   ec_matlab_glx:
     label: "Use hardware rendering for MATLAB GUI"
     help: |
-      <small>This will add `-nosoftwareopengl` to the matlab command line when requesting a GPU</small>
+      <small>This will add `-nosoftwareopengl` to the matlab command line when requesting a GPU<br>
+      <i>Note: Not supported on MIG</i> </small>
     widget: "check_box"
     checked_value: 1
     unchecked_value: 0

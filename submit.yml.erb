@@ -37,7 +37,7 @@ script:
                   "--partition=accel",
                   "--gres=gpu:a100:<%= ec_gpus.to_i %>",
                   "--exclude=gpu-[1-2,13]",
-                <%- when 'MIG' -%>
+                <% when 'MIG' -%>
                   "--partition=mig",
                   "-G", "<%= ec_gpus.to_i %>",
                 <%- else -%>

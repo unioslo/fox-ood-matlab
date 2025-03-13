@@ -1,4 +1,4 @@
-# Fox Desktop for Open OnDemand
+# MATLAB for Open OnDemand
 
 MATLAB app for Open Ondemand, as used on the Fox HPC cluster at University of Oslo.
 

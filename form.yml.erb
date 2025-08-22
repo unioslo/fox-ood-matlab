@@ -3,6 +3,7 @@ cluster: "fox"
 
 form:
   - auto_modules_MATLAB
+  - ec_mail_on_start
   - global_fox_alacarte
   - ec_matlab_glx
   - auto_accounts
@@ -16,6 +17,13 @@ attributes:
 
   auto_modules_MATLAB:
     default: false
+
+  ec_mail_on_start:
+    label: "Send e-mail when session starts"
+    widget: "check_box"
+    value: false
+    help: |
+      <small>Using the e-mail your account is registered to</small>
 
   auto_accounts:
           label: "Choose the Educloud project to run under:"
